@@ -22,8 +22,8 @@
 - view scores of exam
 - add student
 - add exam
-	*add questions
-		*add answers (choose correct answer)
+	* add questions
+		* add answers (choose correct answer)
 - delete student
 - delete question
 	
