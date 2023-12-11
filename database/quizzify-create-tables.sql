@@ -1,6 +1,7 @@
-use quizzify;
+use `quizzify`;
 -- Table for Admins
 CREATE TABLE admins (
+	admin_name VARCHAR(50) NOT NULL,
     admin_id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) UNIQUE NOT NULL,
     password_hash VARCHAR(255) NOT NULL
@@ -8,6 +9,7 @@ CREATE TABLE admins (
 
 -- Table for Teachers
 CREATE TABLE teachers (
+	teacher_name VARCHAR(50) NOT NULL,
     teacher_id INT PRIMARY KEY AUTO_INCREMENT,
     admin_id INT,
     username VARCHAR(50) UNIQUE NOT NULL,
@@ -17,6 +19,7 @@ CREATE TABLE teachers (
 
 -- Table for Students
 CREATE TABLE students (
+	student_name VARCHAR(50) NOT NULL,
     student_id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) UNIQUE NOT NULL,
     password_hash VARCHAR(255) NOT NULL
@@ -36,6 +39,7 @@ CREATE TABLE exams (
 CREATE TABLE questions (
     question_id INT PRIMARY KEY AUTO_INCREMENT,
     exam_id INT,
+    score INT,
     question_text VARCHAR(255) NOT NULL,
     FOREIGN KEY (exam_id) REFERENCES exams(exam_id)
 );
