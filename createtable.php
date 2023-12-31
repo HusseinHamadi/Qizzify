@@ -68,8 +68,10 @@
         question_id INT,
         option_text VARCHAR(255) NOT NULL,
         is_correct BOOLEAN NOT NULL,
+        answer_text TEXT,  
         FOREIGN KEY (question_id) REFERENCES questions(question_id)
     )";
+
 
     $sqlCreateStudentExamAttemptTable = "
     CREATE TABLE IF NOT EXISTS student_exam_attempt (
