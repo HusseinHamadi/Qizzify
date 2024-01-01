@@ -68,10 +68,16 @@
         question_id INT,
         option_text VARCHAR(255) NOT NULL,
         is_correct BOOLEAN NOT NULL,
-        answer_text TEXT,  
         FOREIGN KEY (question_id) REFERENCES questions(question_id)
     )";
 
+    $sqlCreateTextAnswerTable = "
+    CREATE TABLE IF NOT EXISTS text_answers (
+        answer_id INT PRIMARY KEY AUTO_INCREMENT,
+        question_id INT,
+        answer_text TEXT NOT NULL,
+        FOREIGN KEY (question_id) REFERENCES questions(question_id)
+    );";
 
     $sqlCreateStudentExamAttemptTable = "
     CREATE TABLE IF NOT EXISTS student_exam_attempt (
@@ -117,6 +123,7 @@
     createTable($dbc, $sqlCreateExamsTable, "Exams");
     createTable($dbc, $sqlCreateQuestionsTable, "Questions");
     createTable($dbc, $sqlCreateOptionsTable, "Options");
+    createTable($dbc, $sqlCreateTextAnswerTable, "Text_Answer");
     createTable($dbc, $sqlCreateStudentExamAttemptTable, "Student_Exam_Attempt");
     createTable($dbc, $sqlCreateStudentQuestionAttemptTable, "Student_Question_Attempt");
     createTable($dbc, $sqlCreateCoursesTable, "Courses");

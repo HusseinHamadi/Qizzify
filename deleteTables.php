@@ -12,6 +12,7 @@ selectDB($conn, "Quizzify", 1);
 deleteTable($conn, "student_exam_attempt");
 deleteTable($conn, "student_question_attempt");
 deleteTable($conn, "options");
+deleteTable($conn, "text_answers");
 deleteTable($conn, "questions");
 deleteTable($conn, "enrollments");
 deleteTable($conn, "courses");
