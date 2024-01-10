@@ -14,8 +14,9 @@
 	$conn = connectServer('localhost', 'root', '', 1); //connect to server	
 	selectDB($conn, "Quizzify", 1); //Select DB
 
+	$password=password_hash("admin3password", PASSWORD_DEFAULT);
 	//Insert Admin
-	$sqlInsertAdmin = "INSERT INTO admins (admin_name, username, password_hash) VALUES ('Admin 3', 'admin3', 'admin3password')";
+	$sqlInsertAdmin = "INSERT INTO admins (admin_name, username, password_hash) VALUES ('Admin 3', 'admin3', '$password')";
 	insertDataToTab($conn, 'admins', $sqlInsertAdmin);
 
 	//Insert Teacher

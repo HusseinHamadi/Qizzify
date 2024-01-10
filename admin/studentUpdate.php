@@ -1,4 +1,14 @@
+
 <?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION["admin_id"])) {
+    // Redirect to the login page if not logged in
+    header("Location: ../login.php");
+    exit();
+}
+
 // Include necessary functions and database connection
 include "../DB_Functions.php";
 

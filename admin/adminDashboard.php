@@ -7,7 +7,7 @@ if (!isset($_SESSION["admin_id"])) {
     header("Location: ../login.php");
     exit();
 }
-
+ 
 include "../DB_Functions.php";
 
 // Connect to the server
